@@ -1,0 +1,19 @@
+<div class="app-home-page">
+    <header>
+        <div class="nav-buttons">
+            <div class="login-container">
+                <%= icon "user" %>
+                <span><%= link_to "Login", "new_user_session_path", class: "home-login-link", data: { turbo: false } %></span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-content">   
+            <h1>Newsroom</h1>
+            <p>News, Articles, Current affairs, Game reviews and more... <span><%= link_to "Join", new_user_registration_path, class: "home-register-link", data: { turbo: false } %></span></p>
+        </div>
+    </main>
+    <div class="home-page-footer">
+        <p> © Copyright 2025 The Newsroom - Vijay DA. All rights reserved. </p>
+    </div>
+<div>

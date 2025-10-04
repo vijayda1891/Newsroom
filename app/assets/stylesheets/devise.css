@@ -1,0 +1,202 @@
+.authentication-header{
+    background-color: #242326;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    padding: 20px;
+    display: flex;
+    color: #efd8ba;
+    align-items: center;
+}
+
+.navigation-container{
+    display: flex;
+    align-items: center;
+}
+
+
+.home-page-link{
+    color: #efd8ba;
+    text-decoration: none;
+    font-family: monospace;
+    font-weight:bold;
+    font-size: larger;
+}
+
+.authentication-main-title{
+    margin: auto;
+}
+
+.form-content{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 25%;
+    bottom: 45%;
+    width: 100%;
+    padding:20px;
+    display:flex;
+    justify-content: space-around;
+}
+
+.password-reset-content{
+    position: fixed;
+    left: 0;
+    top: 15%;
+    width: 100%;
+    padding:20px;
+    display:flex;
+    justify-content: space-around;
+    font-family: sans-serif;
+    color:#5e5a54
+}
+
+.field-group{
+    display: flex;
+    gap: 30px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+  
+.form-control {
+    width: 100%;
+    padding: 15px 10px;
+    border: 2px solid #2b2521;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white; 
+}
+  
+.form-group label {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    color:#2b2521;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    background-color: white; 
+    padding: 3px 7px; 
+}
+  
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+    top: -10px; 
+    left: 5px; 
+    font-size: 12px;
+    color: #2b2521;
+}
+
+.form-actions{
+    padding: 5px;
+    text-align: center;
+}
+
+.registration_submission, .login_submit, .password_reset{
+    font-family: monospace;
+    font-weight:bold;
+    font-size: larger;
+    padding: 5px;
+    background-color: #efd8ba;
+    transform: scale(1.2);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.registration_select{
+    width: 110%;
+    height: 101%;
+}
+
+.additional-link{
+    font-family: monospace;
+    font-size: medium;
+}
+
+.registration_login_link, .login_registration_link, .login_password_link{
+    text-decoration: none;
+    font-weight:bold;
+    color:#ff2600;
+}
+
+.login_password_link:hover, .login_registration_link:hover, .registration_login_link:hover {
+    background-color: #f78686;
+    color: black;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.validation-hint{
+    position: absolute;
+    padding: 2px;
+    font-size: small;
+    color: red;
+}
+
+.field-with-icon {
+    position: relative;
+    display: inline-block; 
+}
+
+.icon-check {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: green; /* Color of the tick */
+    font-size: 1.2em; /* Size of the tick */
+}
+
+.icon-alert{
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: red; 
+    font-size: 1.2em;
+}
+
+.show-hide-password{
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(46, 42, 42); 
+    font-size: 1.2em;
+}
+
+.show-hide-password:hover{
+    cursor: pointer;
+}
+
+.icon-display{
+    display: none;
+}
+
+.password-hints{
+    font-family: 'Roboto Condensed';
+    padding: 20px;
+    margin-top: -20px;
+}
+
+.password-hints-text{
+    list-style-type: none;
+    font-size: small;
+    color: #35322e;
+    line-height: 1.2;
+    margin-top: -20px;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.password-validation-feedback{
+    line-height: 0.2;
+    font-size: small;
+    margin-top: -10px;
+    color: red;
+}

@@ -438,6 +438,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9, >= 4.9.3)
   dotenv-rails (~> 2.1, >= 2.1.1)
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   kamal

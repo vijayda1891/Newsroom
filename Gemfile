@@ -69,5 +69,5 @@ gem "tabs_on_rails", "~> 3.0"
 gem "kaminari", "~> 1.2", ">= 1.2.2"
 group :development, :test do
   gem "rspec-rails", "~> 8.0", ">= 8.0.1"
-  gem "dotenv-rails", "~> 2.1", ">= 2.1.1"
+  gem "dotenv-rails", "~> 3.1"
 end

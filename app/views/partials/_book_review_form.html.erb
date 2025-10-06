@@ -32,7 +32,7 @@
 
         <div class="field">
             <%= f.label :genre, class: ""  %>
-            <%= f.select :genre, options_for_select(['Fiction', 'Non-Fiction', 'Fantasy','Mystery', 'History', 'Science','Romance', 'Spirituality', 'Technology','Horror', 'Not Specified'], {selected: @book_review.genre}), { prompt: " -- Select One -- "}, { class: "form-control", placeholder:" " } %>
+            <%= f.select :genre, options_for_select(['Fiction', 'Non-Fiction', 'Fantasy','Mystery', 'History', 'Science','Romance', 'Spirituality', 'Technology','Horror', 'Not Specified'], {selected: @book_review.genre}), { prompt: " -- Select One -- "}, { class: "select-field", placeholder:" " } %>
             
         </div>
 

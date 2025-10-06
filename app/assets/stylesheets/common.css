@@ -1,0 +1,177 @@
+/* commond css */
+
+/* pagination related css start */
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.first a, .prev a, .page a, .next a, .last a{
+    text-decoration: none;
+    color:  #efd8ba;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.first a:hover, .prev a:hover, .page a:hover, .next a:hover, .last a:hover{
+    background-color: #f5e5da;
+    padding: 2px;
+    border-radius: 2px;
+    color: #242326;
+}
+
+/* pagination related css end */
+
+/* common tab related css start*/
+
+.app-common-container {
+    background-color: #242326;
+    padding: 1%;
+    width: 85vw;
+    margin: 0 auto;
+}
+
+.sub-heading-content{
+    margin-top: 10px;
+}
+
+.sub-heading-header{
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.tab-header h3{
+    display: flex;
+    align-items: center; 
+    text-align: center; 
+    color: #efd8ba;
+    margin: 30px 50px; 
+}
+
+.tab-header h3::before,
+.tab-header h3::after {
+  content: '';
+  flex-grow: 1; 
+  border-bottom: 2px solid rgb(116, 103, 103);
+  margin: 0 10px; 
+}
+
+.add-new-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #3ff2b4;
+    margin-bottom: 10px;
+}
+
+.add-new {
+    text-decoration: none;
+    color:#3ff2b4;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.add-new:hover{
+    background-color: #3ff2b4;
+    color: black;
+    border-radius: 2px;
+    padding: 4px;
+}
+
+.reviews-main-content{
+    display: flex; 
+    width: 100%;
+    gap: 10px;
+}
+
+.left-main-content{
+    flex: 2.2; 
+}
+
+.right-main-content{
+    flex: 0.7; 
+}
+
+.tab-heading-description{
+    background-color: #efd8ba;
+    border-radius: 4px;
+    color: #242326;
+    padding: 10px;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.sidebar-sub-header{
+    color: #efd8ba;
+    font-family: monospace;
+    font-style: italic;
+    border-bottom: 2px solid rgb(116, 103, 103);
+}
+
+/* common tab related css end */
+
+/* review forms css start */
+
+.general-review-form{
+  width: 50%; 
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #efd8ba;
+}
+
+.general-review-form, .field {
+  margin-bottom: 15px;
+}
+
+.general-review-form, .field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.general-review-form .field input[type="text"],
+.general-review-form .field input[type="file"],
+.general-review-form .field input[type="number"],
+.general-review-form .field input[type="date"],
+.general-review-form .field input[type="select"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; 
+}
+
+.general-review-form .actions {
+  text-align: center;
+}
+
+.general-review-form .actions input[type="submit"] {
+  background-color: #eea648;
+  color: #242326;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.general-review-form .actions input[type="submit"]:hover {
+  background-color: #f57904;
+}
+
+/* review forms css end */
+
+/* sub navbar css start*/
+.current{
+    padding: 2px;
+    border-radius: 2px;
+    color: #ffe000;
+    text-decoration: none;
+}
+/* sub navbar css end */

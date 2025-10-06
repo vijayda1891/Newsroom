@@ -1,0 +1,27 @@
+<div class="dashboard-container">
+    <header class="dashboard-heading">
+        <div class="dashboard-header-content dashboard-date-field">
+            <%= Date.today.strftime("%B %e, %Y") %>
+        </div>
+        <div class="dashboard-header-content dashboard-header">
+            <%= link_to dashboard_index_path, class: "dashboard-header-link", data: { turbo: false} do%>
+                <h1> The Newsroom </h1>
+            <% end %>    
+        </div>
+        <div class="dashboard-header-content dashboard-header account-links">
+            <div class="user-account">
+                <%= icon "square-user-round" %>
+                <span><%= link_to current_user.first_name, edit_user_registration_path, class: "user-account-link", data: { turbo: false} %></span>
+            </div>
+            <%= link_to "Logout", destroy_user_session_path, class: "logout-link", data: { turbo_method: :delete } %>
+        </div>
+    </header>
+    <div class="dashboard-navbar">
+        <%= tabs_tag(:builder => CustomTabsBuilder) do |tab| %>
+            <%= tab.news 'News', "", class: "dashboard-links" %>
+            <%= tab.articles 'Articles', "articles_path", class: "dashboard-links" %>
+            <%= tab.game_reviews 'Game Reviews', "game_reviews_path", class: "dashboard-links" %>
+            <%= tab.book_reviews 'Book Reviews', "book_reviews_path", class: "dashboard-links" %>
+        <% end %>
+    </div>
+</div>  

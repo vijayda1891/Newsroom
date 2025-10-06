@@ -34,7 +34,7 @@
 }
 
 .sub-heading-content{
-    margin-top: 10px;
+    margin-top: 60px;
 }
 
 .sub-heading-header{
@@ -175,3 +175,11 @@
     text-decoration: none;
 }
 /* sub navbar css end */
+
+/* css for trix editor content start */
+
+.trix-content div {
+    color: #a6bdd3;
+}
+
+/* css for trix editor content end  */

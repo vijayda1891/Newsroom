@@ -1,0 +1,53 @@
+<div class="general-review-form">
+    <%= form_for(@book_review, url: url) do |f| %>
+        <%= render "devise/shared/error_messages", resource: @book_review %>
+        
+        <div class="field">
+            <%= f.label :title, class: "" %>
+            <%= f.text_field :title, class: "" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :author, class: "" %>
+            <%= f.text_field :author, class: "" %>
+        </div>
+
+        <div class="field">
+            <%= f.label "Attach", class: "" %>
+            <%= f.file_field :avatar, class: "" %>
+            <% if @book_review.avatar.present? %>
+                <p>Currently uploaded: <%= @book_review.avatar.file.filename %></p>
+            <% end %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :rating, class: "" %>
+            <%= f.number_field :rating, class: "",step: "any", min: 0, max: 5 %>  
+        </div>
+
+        <div class="field">
+            <%= f.label :published, class: "" %>
+            <%= f.date_field :published, class: "" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :genre, class: ""  %>
+            <%= f.select :genre, options_for_select(['Fiction', 'Non-Fiction', 'Fantasy','Mystery', 'History', 'Science','Romance', 'Spirituality', 'Technology','Horror', 'Not Specified'], {selected: @book_review.genre}), { prompt: " -- Select One -- "}, { class: "form-control", placeholder:" " } %>
+            
+        </div>
+
+        <div class="field">
+            <%= f.label :review, class: "" %>
+            <%= f.rich_text_area :review, class: "", rows: 15, cols: 95 %>
+        </div>
+
+        <div class="actions">
+            <% if action == "new" %>
+                <%= f.submit "Create", class: "", id: "" %>
+            <% else %>
+                <%= f.submit "Update", class: "", id: "" %>
+            <% end %>
+        </div>
+
+    <% end %>
+</div>

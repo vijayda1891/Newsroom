@@ -1,0 +1,58 @@
+<body class="app-common-container">
+    <%= render "partials/common_header" %>
+    <main class="sub-heading-content">
+        <div class="sub-heading-header">
+            <div class="tab-header">
+                <h3> Book Reviews</h3>
+            </div>
+            <div class="add-new-container">
+                <%= icon "plus" %>
+                <span><%= link_to "Add Review", new_book_review_path, class: "add-new", data: { turbo: false} %></span>
+            </div>
+        </div>
+        <div class="reviews-main-content">
+            <div class="left-main-content book-review-content">
+                <% @book_reviews.each do |review| %>
+                    <%= link_to book_review_path(review), class: "book-full-review-link", data: { turbo: false} do %>    
+                        <div class="book-card">
+                            <div class="book-card-image"><%= image_tag review.avatar.url, class: "book-image" %></div>
+                            <div class="book-container">
+                                <h4>by <%= review.author %></h4>
+                                <p> <%= render_stars(review.rating) %></p>
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %>
+                <%= paginate @book_reviews %>
+            </div>
+            <div class="right-main-content">
+                <div class="tab-heading-description">
+                    <% if action != "index" %>    
+                        <h3> <%= action.camelize %> </h3>
+                    <% else %>
+                        <h3> About </h3>
+                    <% end %>
+                    <p> <%= genre_description(action) %> </p>
+                </div>
+                <div class="sidebar-content">
+                    <div class="sidebar-sub-header">
+                        <h2> Categories </h2>
+                    </div>
+                    <div class="books-navbar">   
+                        <%= tabs_tag :namespace => :navigation do |tab| %>
+                            <%= tab.index 'All Books', book_reviews_path, class: "book-links" %>
+                            <%= tab.fiction 'Fiction', fiction_book_reviews_path, class: "book-links" %>
+                            <%= tab.history 'History', history_book_reviews_path, class: "book-links" %>
+                            <%= tab.non_fiction 'Non-Fiction', non_fiction_book_reviews_path, class: "book-links" %>
+                            <%= tab.mystery 'Mystery', mystery_book_reviews_path, class: "book-links" %>
+                            <%= tab.science 'Science', science_book_reviews_path, class: "book-links" %>
+                            <%= tab.romance 'Romance', romance_book_reviews_path, class: "book-links" %>
+                            <%= tab.spirituality 'Spirituality', spirituality_book_reviews_path, class: "book-links" %>
+                            <%= tab.fantasy 'Fantasy', fantasy_book_reviews_path, class: "book-links" %>
+                        <% end %>
+                    </div
+                </div>
+            </div>
+        </div>
+    </main>
+</body>

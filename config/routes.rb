@@ -14,4 +14,16 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "dashboard#index"
+  resources :book_reviews do 
+    collection do 
+      get :fiction
+      get :history
+      get :non_fiction
+      get :mystery
+      get :science
+      get :romance
+      get :spirituality
+      get :fantasy
+    end
+  end
 end

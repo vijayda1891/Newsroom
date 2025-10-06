@@ -1,0 +1,26 @@
+<body class="app-common-container">
+    <%= render "partials/common_header" %>
+    <div class="book-review-navigation">
+        <div><%= link_to "Back", book_reviews_path, class: "book-review-back", data: { turbo: false} %></div>
+        <% if current_user.role == "Admin" %>
+            <div class=""><%= link_to "Edit", edit_book_review_path(@book_review), class: "book-review-edit", data: { turbo: false} %></div>
+        <% end %>
+    </div>
+    <div class="full-review-container">
+        <div class="full-review-left">
+            <%= image_tag @book_review.avatar.url, class: "full-review-image" %>
+        </div>
+        <div class="vertical-divider"></div>
+        <div class="full-review-right">
+            <h1> <%= @book_review.title %> </h1>
+            <h3> by <%= @book_review.author %></h3>
+            <p class="book-rating"><%= render_stars(@book_review.rating) %> <%= @book_review.rating %></p>
+            <%= @book_review.review %>
+            <div class="book-genre-display">
+                <span class="book-genre-title">Genre</span>
+                <p class="book-genre"><%= genre_links(@book_review) %></p>
+            </div>
+            <p class="book-published">First published <%= @book_review.published.strftime("%B %e, %Y") %></p>
+        </div>
+    </div>
+</body>

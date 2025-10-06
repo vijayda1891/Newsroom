@@ -1,0 +1,183 @@
+.books-navbar ul{
+  list-style-type: none; 
+  margin: 0;
+  padding: 0; 
+}
+
+.books-navbar li{
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  border-bottom: 2px groove rgb(116, 103, 103);
+  text-align: center;
+}
+
+.book-links a{
+  display: block;
+  text-decoration: none;
+  font-size: medium;
+  color: #efd8ba;
+  font-family: monospace;
+}
+
+.books-navbar ul li:hover{
+  background-color: rgb(248, 216, 175);
+  border-radius: 2px;
+  color: black;
+  a{
+    color: black;
+  }
+}
+
+.book-review-content{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 #efd8ba;
+  transition: 0.3s;
+  border-radius: 5px; 
+  width: 14rem;
+  height: 29rem;
+  align-items: stretch;
+}
+
+.book-full-review-link{
+  text-decoration: none;
+}
+
+.book-card:hover {
+  box-shadow: 0 8px 16px 0  #efd8ba;
+}
+
+.book-card-image{
+  flex: 2;
+}
+
+.book-container {
+  flex: 1;
+  padding: 2px 14px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color:  #efd8ba;
+}
+
+.book-image {
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-review-navigation{
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.book-review-back{
+  float: left;
+  text-decoration: none;
+  color: #eebb79;
+}
+
+.book-review-edit{
+  float: right;
+  text-decoration: none;
+  color: #eebb79;
+}
+
+.full-review-container{
+  display: flex; 
+  width: 100%; 
+}
+
+.full-review-left{
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-review-right {
+  flex: 1; 
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-direction: column;
+  }
+
+.vertical-divider {
+  width: 2px;
+  background-color: #efd8ba; 
+  margin-top: 20px;
+  margin-bottom: 30px;
+  height: 85vh;
+}
+
+.full-review-image{
+  width: 50%;
+  margin: auto;
+}
+
+.full-review-right h1{
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+  color: #efd8ba;
+}
+
+.full-review-right h3{
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+  color: #ecc38d;
+}
+
+.book-review-review{
+  color: #ffffff;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.book-genre-display{
+  display: flex;
+  align-items: center;
+}
+
+.book-genre-title{
+  margin-right: 10px;
+  color:#ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.book-genre{
+  background-color: #efd8ba;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-style: italic;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.book-published{
+  color: #efd8ba;
+}
+
+.book-rating{
+  color: #efd8ba;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.genre-link{
+  text-decoration: none;
+  color:black;
+}
+
+.book-genre:hover{
+  background-color:#f3c385;
+}
+

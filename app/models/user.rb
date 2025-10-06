@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # has_rich_text :content  
+  enum :role, { Viewer: 0, Admin: 1 }       
+
   after_create :send_welcome_email 
   
   private

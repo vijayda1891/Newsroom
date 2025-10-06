@@ -26,4 +26,5 @@ Rails.application.routes.draw do
       get :fantasy
     end
   end
+  resources :game_reviews
 end

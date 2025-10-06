@@ -20,7 +20,7 @@
         <%= tabs_tag(:builder => CustomTabsBuilder) do |tab| %>
             <%= tab.news 'News', "", class: "dashboard-links" %>
             <%= tab.articles 'Articles', "articles_path", class: "dashboard-links" %>
-            <%= tab.game_reviews 'Game Reviews', "game_reviews_path", class: "dashboard-links" %>
+            <%= tab.game_reviews 'Game Reviews', game_reviews_path, class: "dashboard-links" %>
             <%= tab.book_reviews 'Book Reviews', book_reviews_path, class: "dashboard-links" %>
         <% end %>
     </div>

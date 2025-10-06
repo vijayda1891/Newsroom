@@ -1,0 +1,46 @@
+<div class="general-review-form">
+    <%= form_for(@game_review, url: url) do |f| %>
+        <%= render "devise/shared/error_messages", resource: @game_review %>
+        
+        
+        <div class="field">
+            <%= f.label :title, class: "" %>
+            <%= f.text_field :title, class: "" %>
+        </div>
+
+        <div class="field">
+            <%= f.label "Attach", class: "" %>
+            <%= f.file_field :avatar, class: "" %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :rating, class: "" %>
+            <%= f.number_field :rating, class: "", min: 0, max: 100 %>  
+        </div>
+
+        <div class="field">
+            <%= f.label :release, class: "" %>
+            <%= f.date_field :release, class: "" %>
+        </div>
+        
+
+        <div class="field">
+            <%= f.label :short_description, class: "" %>
+            <%= f.text_area :short_description, class: "", rows: 4, cols: 95 %>
+        </div>
+
+        <div class="field">
+            <%= f.label :review, class: "" %>
+            <%= f.rich_text_area :review, class: "", rows: 15, cols: 95 %>
+        </div>
+
+        <div class="actions">
+            <% if action == "new" %>
+                <%= f.submit "Create", class: "", id: "" %>
+            <% else %>
+                <%= f.submit "Update", class: "", id: "" %>
+            <% end %>
+        </div>
+
+    <% end %>
+</div>

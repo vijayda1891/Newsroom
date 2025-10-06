@@ -1,0 +1,149 @@
+.game-review-card {
+    box-shadow: 0 4px 8px 0 rgba(245, 215, 150, 0.2);
+    transition: 0.3s;
+    display: flex;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.game-review-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(245, 225, 139, 0.2);
+}
+
+.review-image-box{
+    flex: 0.5;
+}
+
+.review-content {
+    padding: 2px 16px;
+    flex: 1.5;
+    line-height: 15px;
+}
+
+.game-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-title{
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: #eebb79;
+}
+
+.review-description{
+    color: #ffffff;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.review-release{
+    color: #eebb79;
+}
+
+.review-rating{
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    color:  #242326;
+    background-color: #efd8ba;
+    border: 2px solid #fa3100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.full-review-link{
+    text-decoration: none;
+}
+
+.review-title:hover{
+    color: orange;
+}
+
+.full-review-content{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content:space-around;
+    gap: 10px;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.full-review-image{
+    transform: scale(0.9);    
+}
+
+.full-review-review{
+    color: #ffffff;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.full-review-header{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: #eebb79;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    justify-content: space-around;
+}
+
+.full-review-back, .full-review-edit{
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: #eebb79;
+    font-weight: bold;
+}
+
+.sidebar-review-card{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-bottom: 2px solid rgb(116, 103, 103);
+    gap: 10px;
+}
+
+.sidebar-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar-image-box{
+    flex: 1;
+}
+.sidebar-review-content{
+    flex: 1;
+}
+
+.full-review-rating {
+    width: 120px;
+    height: 120px;
+    border-radius:50%;
+    color:  #242326;
+    background-color: #efd8ba;
+    border: 5px solid #fa3100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+.full-review-text-verdict{
+    color: #eebb79;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 2.2em;
+}

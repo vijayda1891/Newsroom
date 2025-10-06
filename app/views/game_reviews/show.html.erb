@@ -1,0 +1,22 @@
+<body class="app-common-container">
+    <%= render "partials/common_header" %>
+    <div class="full-review-content">
+        <div class="full-review-header">
+            <div><%= link_to "Back", game_reviews_path, class: "full-review-back", data: { turbo: false} %></div>
+            <div class=""><h2><%= @game_review.title %> - Review</h2></div>
+            <div class=""><%= link_to "Edit", edit_game_review_path(@game_review), class: "full-review-edit", data: { turbo: false} %></div>
+        </div>
+        <div class="full-review-image">
+            <%= image_tag @game_review.avatar.to_s, class:"game-image" %>
+        </div>
+        <div class="full-review-review">
+            <%= @game_review.review %>
+        </div>
+        <div class="full-review-rating"> 
+            <%= @game_review.rating %>
+        </div>
+        <div class="full-review-text-verdict">
+            <%= ratings_helper(@game_review.rating) %>
+        </div>
+    </div>
+</body>

@@ -5,12 +5,14 @@
             <div class="tab-header">
                 <h3> Game Reviews</h3>
             </div>
-            <div class="add-new-container">
-                <%= icon "plus" %>
-                <span><%= link_to "Add Review", new_game_review_path, class: "add-new", data: { turbo: false} %></span>
-            </div>
+            <% if current_user.role == "Admin" %>
+                <div class="add-new-container">
+                    <%= icon "plus" %>
+                    <span><%= link_to "Add Review", new_game_review_path, class: "add-new", data: { turbo: false} %></span>
+                </div>
+            <% end %>
         </div>
-        <div class="reviews-main-content">
+        <div class="general-main-content">
             <div class="left-main-content">
                 <% @game_reviews.each do |review| %>
                 <div class="game-review-card">

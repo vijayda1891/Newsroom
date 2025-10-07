@@ -34,7 +34,7 @@
 }
 
 .sub-heading-content{
-    margin-top: 60px;
+    /* margin-top: 60px; */
 }
 
 .sub-heading-header{
@@ -79,7 +79,7 @@
     padding: 4px;
 }
 
-.reviews-main-content{
+.general-main-content{
     display: flex; 
     width: 100%;
     gap: 10px;
@@ -186,6 +186,11 @@
 
 .trix-content div {
     color: #a6bdd3;
+}
+
+.trix-content figure.attachment--image .attachment__caption,
+.trix-content figure.attachment--preview .attachment__caption {
+  display: none !important;
 }
 
 /* css for trix editor content end  */

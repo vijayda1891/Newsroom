@@ -1,0 +1,49 @@
+<div class="general-review-form">
+    <%= form_for(@article, url: url) do |f| %>
+        <%= render "devise/shared/error_messages", resource: @article %>
+        
+        <div class="field">
+            <%= f.label :title, class: "" %>
+            <%= f.text_field :title, class: "" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :author, class: "" %>
+            <%= f.text_field :author, class: "" %>
+        </div>
+
+        <div class="field">
+            <%= f.label "Attach", class: "" %>
+            <%= f.file_field :avatar %>
+        </div>
+
+        <div class="field">
+            <%= f.label :published, class: "" %>
+            <%= f.date_field :published, class: "" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :tag, class: ""  %>
+            <%= f.select :tag, options_for_select(['Science', 'Travel', 'Sport','Culture', 'Business', 'Innovation', 'Not Specified'], {selected: @article.tag}), { prompt: " -- Select One -- "}, { class: "select-field", placeholder:" " } %> 
+        </div>
+
+        <div class="field">
+            <%= f.label :short_description, class: "" %>
+            <%= f.text_area :short_description, class: "", rows: 3, cols: 95 %>  
+        </div>
+
+        <div class="field">
+            <%= f.label :content %>
+            <%= f.rich_text_area :content %>
+        </div>
+
+        <div class="actions">   
+            <% if action == "new" %>
+                <%= f.submit "Create", class: "", id: "" %>
+            <% else %>
+                <%= f.submit "Update", class: "", id: "" %>
+            <% end %>
+        </div>
+
+    <% end %>
+</div>

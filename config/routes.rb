@@ -27,4 +27,11 @@ Rails.application.routes.draw do
     end
   end
   resources :game_reviews
+  resources :articles do
+    collection do 
+      get :culture
+      get :travel
+      get :sport
+    end 
+  end
 end

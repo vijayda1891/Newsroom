@@ -1,0 +1,54 @@
+<body class="app-common-container">
+    <%= render "partials/common_header" %>
+    <main class="sub-heading-content">
+        <div class="sub-heading-navbar">
+            <%= tabs_tag :namespace => :navigation do |tab| %>
+                <%= tab.index 'General', articles_path, class: "article-links" %>
+                <%= tab.culture 'Culture', culture_articles_path, class: "article-links" %>
+                <%= tab.sport 'Sport', sport_articles_path, class: "article-links" %>
+                <%= tab.travel 'Travel', travel_articles_path, class: "article-links" %>
+            <% end %>
+        </div>
+        <% if current_user.role == "Admin" %>
+            <div class="add-new-container new-article">
+                <%= icon "plus" %>
+                <span><%= link_to "Add Article", new_article_path, class: "add-new", data: { turbo: false} %></span>
+            </div>
+        <% end %>
+        <% if action == "index" %>
+            <div class="latest-articles">
+                <div class="latest-article-heading">
+                    <h4> What's New ? </h4>
+                </div>
+                <div class="latest-articles-list">
+                    <% @latest_articles.each do |latest| %>
+                        <div class="latest-individual-headline">
+                            <%= link_to article_path(latest), class: "whats-new-link", data: { turbo: false} do %>
+                                <h3> <%= latest.title %> </h3>  
+                            <% end %>  
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+        <div class="general-main-content">
+            <div class="left-main-content article-card-content">
+                <% @articles.each do |article| %>
+                    <%= link_to article_path(article), class: "full-article-link", data: { turbo: false} do %>    
+                        <div class="article-card">
+                            <div class="article-card-image"><%= image_tag article.avatar.url, class: "article-image" %></div>
+                            <div class="article-card-container">
+                                <h2> <%= article.title %></h2>
+                                <p> <%= article.short_description %></p>
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="right-main-content article-index-ad">
+                <p>ADVERTISEMENT</p>
+                <%= image_tag "heinze-ad.jpg", class: "sidebar-ad" %>
+            </div>
+        </div>
+    </main>
+</body>

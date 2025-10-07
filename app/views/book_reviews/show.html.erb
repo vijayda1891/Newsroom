@@ -15,7 +15,7 @@
             <h1> <%= @book_review.title %> </h1>
             <h3> by <%= @book_review.author %></h3>
             <p class="book-rating"><%= render_stars(@book_review.rating) %> <%= @book_review.rating %></p>
-            <%= @book_review.review %>
+            <%= action_text_links_new_tab(@book_review.review) %>
             <div class="book-genre-display">
                 <span class="book-genre-title">Genre</span>
                 <p class="book-genre"><%= genre_links(@book_review) %></p>

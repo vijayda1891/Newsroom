@@ -1,0 +1,23 @@
+<body class="app-common-container">
+    <%= render "partials/common_header" %>
+    <main class="sub-heading-content">
+        <div class="article-navigation">
+            <div><%= link_to "Back", :back, class: "article-view-back", data: { turbo: false} %></div>
+            <% if current_user.role == "Admin" %>
+                <div class=""><%= link_to "Edit", edit_article_path(@article), class: "article-view-edit", data: { turbo: false} %></div>
+            <% end %>
+        </div>
+        <div class="article-body">
+            <div class="article-main-heading">
+                <h1> <%= @article.title %> </h1>
+            </div>
+            <div class="article-details">
+                <p><%= @article.published.strftime("%B %e, %Y") %></p>
+                <h3> <%= @article.author%></h3>
+            </div>
+            <div class="article-content">
+                <%= action_text_links_new_tab(@article.content) %>
+            </div>
+        </div>
+    </main>
+</body> 

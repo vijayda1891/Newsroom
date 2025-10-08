@@ -1,54 +1,68 @@
-.game-review-card {
-    box-shadow: 0 4px 8px 0 rgba(245, 215, 150, 0.2);
-    transition: 0.3s;
-    display: flex;
-    height: 200px;
-    margin-bottom: 20px;
+.game-review-card-content{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    padding: 20px;
 }
 
-.game-review-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(245, 225, 139, 0.2);
+.game-review-card {
+    box-shadow: 0 4px 8px rgba(235, 225, 206, 0.1);
+    border-radius: 8px;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: row; 
+    height: auto; 
+    flex-grow: 1;
+    width: 100%;
+    justify-self: start;
 }
 
 .review-image-box{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
     flex: 0.5;
 }
 
-.review-content {
-    padding: 2px 16px;
-    flex: 1.5;
-    line-height: 15px;
+.review-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
 }
 
-.game-image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.review-content{
+    flex: 1.5;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    color: #c6d1fa;
+    margin-left: 10px;
 }
 
 .review-title{
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
-    color: #eebb79;
+    color: #c6d1fa;
 }
 
 .review-description{
-    color: #ffffff;
+    color: #bbdaee;
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .review-release{
-    color: #eebb79;
+    color: #9dd3ec;
 }
 
 .review-rating{
     width: 40px;
     height: 40px;
     border-radius:50%;
-    color:  #242326;
-    background-color: #efd8ba;
+    color:  #e8e5ee;
+    background-color: #444546;
     border: 2px solid #fa3100;
     display: flex;
     justify-content: center;
@@ -66,21 +80,7 @@
     color: orange;
 }
 
-.full-review-content{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content:space-around;
-    gap: 10px;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.full-review-image{
-    transform: scale(0.9);    
-}
-
-.full-review-review{
+.game-review-review{
     color: #ffffff;
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
@@ -88,21 +88,22 @@
     margin-right: 25%;
 }
 
-.full-review-header{
+.game-review-header{
+    padding: 20px;
     font-family: 'Courier New', Courier, monospace;
-    font-style: italic;
-    color: #eebb79;
-    display: flex;
-    align-items: center;
-    width: 100vw;
-    justify-content: space-around;
+    font-weight: bold;
 }
 
-.full-review-back, .full-review-edit{
+.game-review-back {
     text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
     color: #eebb79;
-    font-weight: bold;
+    float: left;
+}
+
+.game-review-edit{
+    text-decoration: none;
+    color: #eebb79;
+    float: right;
 }
 
 .sidebar-review-card{
@@ -128,12 +129,23 @@
     flex: 1;
 }
 
-.full-review-rating {
+.game-review-title{
+    text-align: center;
+    color: rgb(231, 240, 243)
+}
+
+.game-review-rating-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-review-rating {
     width: 120px;
     height: 120px;
     border-radius:50%;
-    color:  #242326;
-    background-color: #efd8ba;
+    color:  #e8e5ee;
+    background-color: #444546;
     border: 5px solid #fa3100;
     display: flex;
     justify-content: center;
@@ -143,9 +155,20 @@
     font-weight: bold;
 }
 
-.full-review-text-verdict{
-    color: #eebb79;
+.game-review-text-verdict{
+    color: #c1e0f5;
     font-family:'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 2.2em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.game-image{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 50%;
+    object-fit: cover; 
+    overflow: hidden;
 }

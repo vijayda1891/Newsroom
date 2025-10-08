@@ -18,7 +18,7 @@
                     <%= link_to book_review_path(review), class: "book-full-review-link", data: { turbo: false} do %>    
                         <div class="book-card">
                             <div class="book-card-image"><%= image_tag review.avatar.url, class: "book-image" %></div>
-                            <div class="book-container">
+                            <div class="book-card-content">
                                 <h4>by <%= review.author %></h4>
                                 <p> <%= render_stars(review.rating) %></p>
                             </div>

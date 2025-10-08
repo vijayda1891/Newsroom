@@ -121,6 +121,10 @@
   color: #eceee5;
 }
 
+.article-content div{
+  color: #dfebf7;
+}
+
 .article-card-content{
   display: grid;
   gap: 20px;
@@ -175,17 +179,6 @@
 
 .article-index-ad{
   margin-top: 20px;
-}
-
-.article-index-ad p{
-  color:rgb(248, 233, 213);
-  font-weight: bolder;
-  float: right;
-}
-
-.sidebar-ad{
-  width: 100%;
-  height: auto;
 }
 
 /* .article-main-image{

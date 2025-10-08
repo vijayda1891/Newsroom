@@ -1,4 +1,5 @@
 <div class="general-review-form">
+    <center><h2><%= action %></h2></center>
     <%= form_for(@game_review, url: url) do |f| %>
         <%= render "devise/shared/error_messages", resource: @game_review %>
         

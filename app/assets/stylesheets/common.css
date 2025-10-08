@@ -120,6 +120,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #efd8ba;
+  margin-top: 30px;
 }
 
 .general-review-form, .field {
@@ -184,13 +185,37 @@
 
 /* css for trix editor content start */
 
-.trix-content div {
+/* .trix-content div {
     color: #a6bdd3;
-}
+} */
 
 .trix-content figure.attachment--image .attachment__caption,
 .trix-content figure.attachment--preview .attachment__caption {
   display: none !important;
 }
 
+.trix-content a:hover {
+  color: #6f73c0; 
+  text-decoration: none;
+}
+
+.trix-content a:visited {
+  color: #b89bf8; 
+}
+
 /* css for trix editor content end  */
+
+/* index pages sidebar ad images css start */
+
+.index-page-sidebar-ad p{
+  color:rgb(248, 233, 213);
+  font-weight: bolder;
+  float: right;
+}
+
+.sidebar-ad{
+  width: 100%;
+  height: auto;
+}
+
+/* index pages sidebar ad images css end */

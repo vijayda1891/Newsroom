@@ -13,21 +13,21 @@
             <% end %>
         </div>
         <div class="general-main-content">
-            <div class="left-main-content">
+            <div class="left-main-content game-review-card-content">
                 <% @game_reviews.each do |review| %>
-                <div class="game-review-card">
-                    <div class="review-image-box">
-                        <%= image_tag review.avatar.url, class: "game-image" %>
-                    </div>
-                    <div class="review-content">
-                        <%= link_to game_review_path(review), class: "full-review-link", data: { turbo: false} do %>
-                            <p class="review-title"><%= review.title %><p>
-                        <% end %>
-                        <p class="review-description"><%= review.short_description %></p>
-                        <p class="review-release"><%= review.release.strftime("%B %e, %Y") %></p>
-                        <p class="review-rating"><%= review.rating %></p>
-                    </div>
-                </div>
+                    <%= link_to game_review_path(review), class: "full-review-link", data: { turbo: false} do %>    
+                        <div class="game-review-card">
+                            <div class="review-image-box">
+                                <%= image_tag review.avatar.url, class: "game-image" %>
+                            </div>
+                            <div class="review-content">
+                                <h2><%= review.title %></h2>
+                                <p class="review-description"><%= review.short_description %></p>
+                                <p class="review-release"><%= review.release.strftime("%B %e, %Y") %></p>
+                                <p class="review-rating"><%= review.rating %></p>
+                            </div>
+                        </div>
+                    <% end %>    
                 <% end %>
                 <%= paginate @game_reviews %>
             </div>
@@ -53,6 +53,10 @@
                             </div>
                         </div>
                     <% end %>
+                </div>
+                <div class="index-page-sidebar-ad">
+                    <p>ADVERTISEMENT</p>
+                    <%= image_tag "heineken-ad.jpg", class: "sidebar-ad" %>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_06_234239) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_15_171806) do
   create_table "action_text_rich_texts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", size: :long
@@ -85,6 +85,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_06_234239) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["title"], name: "index_game_reviews_on_title", unique: true
+  end
+
+  create_table "news", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "headline", default: "", null: false
+    t.text "content"
+    t.datetime "published_on", null: false
+    t.text "short_description", null: false
+    t.string "tag", default: "", null: false
+    t.string "avatar"
+    t.boolean "main_featured"
+    t.boolean "featured"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["published_on"], name: "index_news_on_published_on"
+    t.index ["tag"], name: "index_news_on_tag"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

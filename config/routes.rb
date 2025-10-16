@@ -34,4 +34,14 @@ Rails.application.routes.draw do
       get :sport
     end 
   end
+  resources :news do 
+    collection do 
+      get :world
+      get :sport
+      get :regional
+      get :tech
+      get :business
+      get :entertainment
+    end
+  end
 end

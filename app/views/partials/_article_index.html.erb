@@ -3,10 +3,9 @@
     <main class="sub-heading-content">
         <div class="sub-heading-navbar">
             <%= tabs_tag :namespace => :navigation do |tab| %>
-                <%= tab.index 'General', articles_path, class: "article-links" %>
-                <%= tab.culture 'Culture', culture_articles_path, class: "article-links" %>
-                <%= tab.sport 'Sport', sport_articles_path, class: "article-links" %>
-                <%= tab.travel 'Travel', travel_articles_path, class: "article-links" %>
+                <%= tab.culture 'Culture', culture_articles_path, class: "child-navbar-links" %>
+                <%= tab.sport 'Sport', sport_articles_path, class: "child-navbar-links" %>
+                <%= tab.travel 'Travel', travel_articles_path, class: "child-navbar-links" %>
             <% end %>
         </div>
         <% if current_user.role == "Admin" %>

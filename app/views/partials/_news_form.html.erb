@@ -1,0 +1,58 @@
+<div class="general-review-form">
+    <center><h2><%= action %></h2></center>
+    <%= form_for(@news, url: url) do |f| %>
+        <%= render "devise/shared/error_messages", resource: @news %>
+        
+        <div class="field">
+            <%= f.label :headline, class: "" %>
+            <%= f.text_field :headline, class: "" %>
+        </div>
+
+        <div class="field">
+            <%= f.label "Attach", class: "" %>
+            <%= f.file_field :avatar %>
+            <% if @news.avatar.present? %>
+                <p>Currently uploaded: <%= @news.avatar.file.filename %></p>
+            <% end %>
+        </div>
+
+        <div class="field">
+            <%= f.label :published_on, class: "" %>
+            <%= f.datetime_field :published_on, class: "" %>
+        </div>
+
+        <div class="checkbox-field">
+            <%= f.checkbox :main_featured, class: "inline-checkbox" %>
+            <%= f.label :main_featured, class: "inline-label"  %>
+        </div>
+
+        <div class="checkbox-field">
+            <%= f.checkbox :featured, class: "inline-checkbox" %>
+            <%= f.label :featured, class: "inline-label"  %>
+        </div>
+
+        <div class="field">
+            <%= f.label :tag, class: ""  %>
+            <%= f.select :tag, options_for_select(['World', 'Regional', 'Sport', 'Business', 'Tech', 'Entertainment', 'Not Specified'], {selected: @news.tag}), { prompt: " -- Select One -- "}, { class: "select-field", placeholder:" " } %> 
+        </div>
+
+        <div class="field">
+            <%= f.label :short_description, class: "" %>
+            <%= f.text_area :short_description, class: "", rows: 3, cols: 95 %>  
+        </div>
+
+        <div class="field">
+            <%= f.label :content %>
+            <%= f.rich_text_area :content %>
+        </div>
+
+        <div class="actions">   
+            <% if action == "New" %>
+                <%= f.submit "Create", class: "", id: "" %>
+            <% else %>
+                <%= f.submit "Update", class: "", id: "" %>
+            <% end %>
+        </div>
+
+    <% end %>
+</div>

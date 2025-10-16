@@ -12,6 +12,9 @@
         <div class="field">
             <%= f.label "Attach", class: "" %>
             <%= f.file_field :avatar, class: "" %>
+            <% if @game_review.avatar.present? %>
+                <p>Currently uploaded: <%= @game_review.avatar.file.filename %></p>
+            <% end %>
         </div>
         
         <div class="field">

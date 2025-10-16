@@ -1,0 +1,99 @@
+<body class="app-common-container">
+    <%= render "partials/common_header" %>
+    <main>
+        <div class="sub-heading-navbar">
+            <%= tabs_tag :namespace => :navigation do |tab| %>
+                <%= tab.world 'World', world_news_index_path, class: "child-navbar-links" %>
+                <%= tab.sport 'Sport', sport_news_index_path, class: "child-navbar-links" %>
+                <%= tab.regional 'Regional', regional_news_index_path, class: "child-navbar-links" %>
+                <%= tab.tech 'Tech', tech_news_index_path, class: "child-navbar-links" %>
+                <%= tab.business 'Business', business_news_index_path, class: "child-navbar-links" %>
+                <%= tab.entertainment 'Entertainment', entertainment_news_index_path, class: "child-navbar-links" %>
+            <% end %>
+        </div>
+        <% if current_user.role == "Admin" %>
+            <div class="add-new-container create-news">
+                <%= icon "plus" %>
+                <span><%= link_to "Add News", new_news_path, class: "add-new", data: { turbo: false} %></span>
+            </div>
+        <% end %>
+
+        <div class="tab-header">
+            <% unless action == "index" %>
+                <h3> <%= action.camelize %> </h3>
+            <% else %>
+                <h3> News </h3>
+            <% end %>
+        </div>
+        <% if @main_featured.present? %>          
+            <div class="news-main-layout">
+                <div class="news-leftside-content">    
+                    <div class="main-featured-content">
+                        <div class="main-featured-card">
+                            <%= link_to news_path(@main_featured), class: "main-featured-news-link", data: { turbo: false} do %>    
+                                <div class="main-featured-card">
+                                    <div class="main-feature-content">
+                                        <h2><%= @main_featured.headline %></h2>
+                                        <p class="main-feature-description"><%= @main_featured.short_description %></p>
+                                        <p class="main-feature-published"><%= time_ago_in_words(@main_featured.published_on) %> ago</p>
+                                    </div>
+                                    <div class="main-feature-image-box">
+                                        <%= image_tag @main_featured.avatar.url, class: "main-feature-image" %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div> 
+                    </div>
+                    <div class="other-news-headlines">
+                        <% @other_news.each do |other_news| %>
+                            <%= link_to news_path(other_news), class: "other-news-link", data: { turbo: false} do %>    
+                                <div class="other-news-card">
+                                    <div class="other-news-image"><%= image_tag other_news.avatar.url, class: "news-image" %></div>
+                                    <div class="other-news-content">
+                                        <h3><%= other_news.headline %></h3>
+                                        <p class="news-description"><%= other_news.short_description %></p>
+                                        <div class="time-tag-display">
+                                            <p class="news-published-on"><%= time_ago_in_words(other_news.published_on) %> ago</p>
+                                            <p class="news-tag"><%= other_news.tag %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="news-sidebar-content">
+                    <% @sidebar_news.each do |sidebar_news| %>
+                        <%= link_to news_path(sidebar_news), class: "sidebar-news-link", data: { turbo: false} do %>    
+                            <div class="sidebar-news-card">
+                                <div class="sidebar-news-image"><%= image_tag sidebar_news.avatar.url, class: "sidebar-image" %></div>
+                                <div class="sidebar-news-content">
+                                    <h3><%= sidebar_news.headline %></h3>
+                                    <p class="news-description"><%= sidebar_news.short_description %></p>
+                                    <div class="time-tag-display">
+                                        <p class="news-published-on"><%= time_ago_in_words(sidebar_news.published_on) %> ago</p>
+                                        <p class="news-tag"><%= sidebar_news.tag %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+            <div class= "more-news-section">
+                <div class="more-news-heading">
+                    <h3>More News</h3>
+                </div>
+                <div class="more-news-list">
+                    <% @more_news.each do |more_news| %>
+                        <div class="more-news-headline">
+                            <%= link_to news_path(more_news), class: "more-news-link", data: { turbo: false} do %>
+                                <h3> <%= more_news.headline %> </h3>  
+                            <% end %>  
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+    </main>
+</body>

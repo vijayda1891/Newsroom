@@ -3,23 +3,23 @@
 /* pagination related css start */
 
 .pagination{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .first a, .prev a, .page a, .next a, .last a{
-    text-decoration: none;
-    color:  #efd8ba;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+  text-decoration: none;
+  color:  #efd8ba;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 }
 
 .first a:hover, .prev a:hover, .page a:hover, .next a:hover, .last a:hover{
-    background-color: #f5e5da;
-    padding: 2px;
-    border-radius: 2px;
-    color: #242326;
+  background-color: #f5e5da;
+  padding: 2px;
+  border-radius: 2px;
+  color: #242326;
 }
 
 /* pagination related css end */
@@ -27,10 +27,10 @@
 /* common tab related css start*/
 
 .app-common-container {
-    background-color: #242326;
-    padding: 1%;
-    width: 85vw;
-    margin: 0 auto;
+  background-color: #242326;
+  padding: 1%;
+  width: 85vw;
+  margin: 0 auto;
 }
 
 .sub-heading-content{
@@ -38,16 +38,16 @@
 }
 
 .sub-heading-header{
-    font-style: italic;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .tab-header h3{
-    display: flex;
-    align-items: center; 
-    text-align: center; 
-    color: #efd8ba;
-    margin: 30px 50px; 
+  display: flex;
+  align-items: center; 
+  text-align: center; 
+  color: #dd7d69;
+  margin: 30px 50px; 
 }
 
 .tab-header h3::before,
@@ -59,54 +59,54 @@
 }
 
 .add-new-container{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    color: #3ff2b4;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #3ff2b4;
+  margin-bottom: 10px;
 }
 
 .add-new {
-    text-decoration: none;
-    color:#3ff2b4;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-decoration: none;
+  color:#3ff2b4;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .add-new:hover{
-    background-color: #3ff2b4;
-    color: black;
-    border-radius: 2px;
-    padding: 4px;
+  background-color: #3ff2b4;
+  color: black;
+  border-radius: 2px;
+  padding: 4px;
 }
 
 .general-main-content{
-    display: flex; 
-    width: 100%;
-    gap: 10px;
+  display: flex; 
+  width: 100%;
+  gap: 10px;
 }
 
 .left-main-content{
-    flex: 2.2; 
+  flex: 2.2; 
 }
 
 .right-main-content{
-    flex: 0.7; 
+  flex: 0.7; 
 }
 
 .tab-heading-description{
-    background-color: #efd8ba;
-    border-radius: 4px;
-    color: #242326;
-    padding: 10px;
-    font-family:'Times New Roman', Times, serif;
-    font-style: italic;
+  background-color: #efd8ba;
+  border-radius: 4px;
+  color: #242326;
+  padding: 10px;
+  font-family:'Times New Roman', Times, serif;
+  font-style: italic;
 }
 
 .sidebar-sub-header{
-    color: #efd8ba;
-    font-family: monospace;
-    font-style: italic;
-    border-bottom: 2px solid rgb(116, 103, 103);
+  color: #efd8ba;
+  font-family: monospace;
+  font-style: italic;
+  border-bottom: 2px solid rgb(116, 103, 103);
 }
 
 /* common tab related css end */
@@ -138,6 +138,7 @@
 .general-review-form .field input[type="file"],
 .general-review-form .field input[type="number"],
 .general-review-form .field input[type="date"],
+.general-review-form .field input[type="datetime-local"],
 .general-review-form .field input[type="select"] {
   width: 100%;
   padding: 8px;
@@ -167,19 +168,28 @@
 }
 
 .select-field{
-    width: 100%;
-    padding: 10px 10px;
-    border-radius: 4px;
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 4px;
+}
+
+.checkbox-field{
+  margin-bottom: 15px;
+}
+
+.inline-checkbox, .inline-label{
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* review forms css end */
 
 /* sub navbar css start*/
 .current{
-    padding: 2px;
-    border-radius: 2px;
-    color: #ffe000;
-    text-decoration: none;
+  padding: 2px;
+  border-radius: 2px;
+  color: #ffe000;
+  text-decoration: none;
 }
 /* sub navbar css end */
 
@@ -219,3 +229,44 @@
 }
 
 /* index pages sidebar ad images css end */
+
+/* child navbar css start  */
+
+.sub-heading-navbar{
+    border-bottom: 4px groove rgb(51 47 47);
+}
+
+.sub-heading-navbar ul{
+  list-style-type: none; 
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  justify-content: center; 
+}
+
+.sub-heading-navbar li{
+  position: relative;
+  margin: 5px 10px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.sub-heading-navbar ul li:hover{
+  background-color: rgb(248, 216, 175);
+  border-radius: 2px;
+  color: black;
+  a{
+    color: black;
+  }
+}
+
+.child-navbar-links a{
+  display: block;
+  text-decoration: none;
+  font-family: monospace;
+  font-size: medium;
+  color: #efd8ba;
+}
+
+/* child navbar css end  */

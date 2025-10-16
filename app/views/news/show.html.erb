@@ -1,0 +1,41 @@
+<body class="app-common-container">
+    <%= render "partials/common_header" %>
+    <main class="sub-heading-content">
+        <div class="news-navigation">
+            <div><%= link_to "Back", :back, class: "news-view-back", data: { turbo: false} %></div>
+            <% if current_user.role == "Admin" %>
+                <div class=""><%= link_to "Edit", edit_news_path(@news), class: "news-view-edit", data: { turbo: false} %></div>
+            <% end %>
+        </div>
+        <div class="news-body">
+            <div class="news-headline">
+                <h1> <%= @news.headline %> </h1>
+            </div>
+            <div class="news-details">
+                <p><%= time_ago_in_words(@news.published_on) %> ago</p>
+            </div>
+            <div class="news-main-image">
+                <%= image_tag @news.avatar.url, class: "" %>
+            </div>
+            <div class="news-content">
+                <%= action_text_links_new_tab(@news.content) %>
+            </div>
+        </div>
+        <% unless @related.empty? %>
+            <div class= "more-news-section">
+                <div class="more-news-heading">
+                    <h3>Related </h3>
+                </div>
+                <div class="more-news-list">
+                    <% @related.each do |related_news| %>
+                        <div class="more-news-headline">
+                            <%= link_to news_path(related_news), class: "more-news-link", data: { turbo: false} do %>
+                                <h3> <%= related_news.headline %> </h3>  
+                            <% end %>  
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+    </main>
+</body> 

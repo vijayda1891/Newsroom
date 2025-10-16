@@ -5,7 +5,7 @@
         </div>
         <div class="dashboard-header-content dashboard-header">
             <%= link_to dashboard_index_path, class: "dashboard-header-link", data: { turbo: false} do %>
-                <h1> Newsroom </h1>
+                <h1> NEWSROOM </h1>
             <% end %>    
         </div>
         <div class="dashboard-header-content dashboard-header account-links">
@@ -18,7 +18,8 @@
     </header>
     <div class="dashboard-navbar">
         <%= tabs_tag(:builder => CustomTabsBuilder) do |tab| %>
-            <%= tab.news 'News', "", class: "dashboard-links" %>
+            <%= tab.home 'Home', "", class: "dashboard-links" %>
+            <%= tab.news 'News', news_index_path, class: "dashboard-links" %>
             <%= tab.articles 'Articles', articles_path, class: "dashboard-links" %>
             <%= tab.game_reviews 'Game Reviews', game_reviews_path, class: "dashboard-links" %>
             <%= tab.book_reviews 'Book Reviews', book_reviews_path, class: "dashboard-links" %>

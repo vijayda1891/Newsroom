@@ -1,3 +1,134 @@
 <body class="app-common-container">
     <%= render "partials/common_header" %>
+    <main>
+        <div class="home-main-layout">
+            <div class="home-left-sidebar">
+                <% @left_sidebar.each do |left_sidebar_news| %>
+                    <%= link_to news_path(left_sidebar_news), class: "sidebar-news-link", data: { turbo: false} do %>    
+                        <div class="sidebar-news-card">
+                            <div class="sidebar-news-image"><%= image_tag left_sidebar_news.avatar.url, class: "sidebar-image" %></div>
+                            <div class="sidebar-news-content">
+                                <h3><%= left_sidebar_news.headline %></h3>
+                                <p class="news-description"><%= left_sidebar_news.short_description %></p>
+                                <div class="time-tag-display">
+                                    <p class="news-published-on"><%= time_ago_in_words(left_sidebar_news.published_on) %> ago</p>
+                                    <p class="news-tag"><%= left_sidebar_news.tag %></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="home-center-content">    
+                <%= link_to news_path(@main_featured), class: "main-featured-news-link", data: { turbo: false} do %>    
+                    <div class="home-featured-card">
+                        <div class="home-feature-image-box">
+                            <%= image_tag @main_featured.avatar.url, class: "home-feature-image" %>
+                        </div>
+                        <div class="home-feature-content">
+                            <h2><%= @main_featured.headline %></h2>
+                            <p class="home-feature-description"><%= @main_featured.short_description %></p>
+                            <p class="home-feature-published"><%= time_ago_in_words(@main_featured.published_on) %> ago</p>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+            <div class="home-right-sidebar">
+                <% @right_sidebar.each do |right_sidebar_news| %>
+                    <%= link_to news_path(right_sidebar_news), class: "sidebar-news-link", data: { turbo: false} do %>    
+                        <div class="sidebar-news-card">
+                            <div class="sidebar-news-content">
+                                <h3><%= right_sidebar_news.headline %></h3>
+                                <p class="news-description"><%= right_sidebar_news.short_description %></p>
+                                <div class="time-tag-display">
+                                    <p class="news-published-on"><%= time_ago_in_words(right_sidebar_news.published_on) %> ago</p>
+                                    <p class="news-tag"><%= right_sidebar_news.tag %></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+        <div class="home-more-news">
+            <div class="more-news-heading">
+                <h3>More News</h3>
+            </div>
+            <div class="more-news-list">
+                <% @more_news.each do |more_news| %>
+                    <div class="more-news-headline">
+                        <%= link_to news_path(more_news), class: "more-news-link", data: { turbo: false} do %>
+                            <h3> <%= more_news.headline %> </h3>  
+                        <% end %>  
+                    </div>
+                <% end %>
+            </div>
+        </div>
+        <div class="home-additonal-content">
+            <div class= "home-articles">
+                <div class="additonal-content-headings">
+                    <h3> <%= link_to "ARTICLES", articles_path, class: "additional-content-link", data: { turbo: false} %></h3>
+                    <%= icon "chevrons-right" %>
+                </div>
+                <% @articles.each_with_index do |article, index|%>
+                    <%= link_to article_path(article), class: "record-link", data: { turbo: false} do %> 
+                        <div class= "additional-content">
+                            <% if index == 0 %>
+                                <div class="display-image-box">
+                                    <%= image_tag article.avatar.url, class: "display-image" %>
+                                </div>
+                                <h3> <%= article.title %> </h3>
+                                <p> <%= article.short_description %> </p>
+                            <% else%>
+                                <h3> <%= article.title %></h3>
+                            <% end %>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="home-game-reviews">
+                <div class="additonal-content-headings">
+                    <h3> <%= link_to "GAME REVIEWS", game_reviews_path, class: "additional-content-link", data: { turbo: false} %></h3>
+                    <%= icon "chevrons-right" %>
+                </div>
+                <% @game_reviews.each_with_index do |game_review, index|%>
+                    <%= link_to game_review_path(game_review), class: "record-link", data: { turbo: false} do %> 
+                        <div class= "additional-content">
+                            <% if index == 0 %>
+                                <div class="display-image-box">
+                                    <%= image_tag game_review.avatar.url, class: "display-image" %>
+                                </div>
+                                <h3> <%= game_review.title %> </h3>
+                                <p> <%= game_review.short_description %> </p>
+                            <% else%>
+                                <h3> <%= game_review.title %></h3>
+                            <% end %>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="home-book-reviews">
+                <div class="additonal-content-headings">
+                    <h3> <%= link_to "BOOK REVIEWS", book_reviews_path, class: "additional-content-link", data: { turbo: false} %></h3>
+                    <%= icon "chevrons-right" %>
+                </div>
+                <% @book_reviews.each_with_index do |book_review, index|%>
+                    <%= link_to book_review_path(book_review), class: "record-link", data: { turbo: false} do %> 
+                        <div class= "additional-content">
+                            <% if index == 0 %>
+                                <div class="display-image-box">
+                                    <%= image_tag book_review.avatar.url, class: "display-image" %>
+                                </div>
+                                <h3> <%= book_review.title %> </h3>
+                                <p> by <%= book_review.author %> </p>
+                            <% else%>
+                                <h3> <%= book_review.title %></h3>
+                                <p> by <%= book_review.author %> </p>
+                            <% end %>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+    </main>
 </body>

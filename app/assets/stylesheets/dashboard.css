@@ -118,8 +118,37 @@
 
 .dashboard-header-link{
   text-decoration: none;
-  color: #efd8ba;
+  /* color: #efd8ba; */
 }
+
+letter-heading {
+  font-family: sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  display: flex; 
+  gap: 2px;
+}
+
+.letter-heading span {
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
+
+.letter-heading span{
+  background-color: #efd8ba;
+  color:  #242326;
+}
+
+/* .letter-heading span:nth-child(even) {
+  background-color: #efd8ba;
+  color:  #242326;
+}
+
+.letter-heading span:nth-child(odd) {
+  background-color: #242326;
+  color: #efd8ba;
+} */
 
 .account-links{
   display: flex;
@@ -189,4 +218,142 @@
   background-color: #e9d876;
 }   
 
+.home-main-layout{
+  display: grid;
+  grid-template-columns: 0.8fr 2.4fr 0.8fr; 
+  gap: 10px; 
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  border-bottom: 2px groove rgb(51 47 47);
+}
+
+.home-left-sidebar{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  padding: 10px;
+}
+
+.home-center-content{
+  padding: 10px;
+}
+
+.home-right-sidebar{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  padding: 10px;
+}
+
+.home-featured-card {
+    box-shadow: 0 4px 8px rgba(235, 225, 206, 0.1);
+    border-radius: 8px;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column; 
+    height: auto; 
+    flex-grow: 1;
+    width: 100%;
+    justify-self: start;
+}
+
+.home-feature-image-box{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    flex: 1.5;
+}
+
+.home-feature-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.home-feature-content {
+    flex: 0.5;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    color: #f8f8fa;
+    margin-left: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.home-feature-description{
+  color: #cececf;
+}
+
+.home-feature-published {
+    color: #7e7e80;
+    padding-right: 10px;
+}
+
+.news-tag{
+    color: #7e7e80; 
+}
+
+.home-more-news{
+  border-bottom: 2px groove rgb(51 47 47);
+  margin-bottom: 30px;
+}
+
+.home-additonal-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 30px; 
+  max-width: 100%;
+  /* margin: 0 auto; */
+  padding: 20px;
+  
+}
+
+.home-articles, .home-game-reviews, .home-book-reviews{
+  border-top: 5px groove rgb(51 47 47);
+  color: #dd7d69;
+}
+
+.additonal-content-headings{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.additional-content-link{
+  text-decoration: none;
+  color: #dd7d69;
+}
+
+.additional-content{
+  border-bottom: 2px groove rgb(51 47 47);
+  margin: 10px;
+}
+
+.display-image-box{
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.display-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.record-link{
+  text-decoration: none;
+}
+
+.additional-content h3{
+  color: #f8f8fa;
+}
+
+.additional-content p{
+  color: #cececf;
+}
+
 /* user dashboard css end */
+

@@ -29,20 +29,18 @@
             <div class="news-main-layout">
                 <div class="news-leftside-content">    
                     <div class="main-featured-content">
-                        <div class="main-featured-card">
-                            <%= link_to news_path(@main_featured), class: "main-featured-news-link", data: { turbo: false} do %>    
-                                <div class="main-featured-card">
-                                    <div class="main-feature-content">
-                                        <h2><%= @main_featured.headline %></h2>
-                                        <p class="main-feature-description"><%= @main_featured.short_description %></p>
-                                        <p class="main-feature-published"><%= time_ago_in_words(@main_featured.published_on) %> ago</p>
-                                    </div>
-                                    <div class="main-feature-image-box">
-                                        <%= image_tag @main_featured.avatar.url, class: "main-feature-image" %>
-                                    </div>
+                        <%= link_to news_path(@main_featured), class: "main-featured-news-link", data: { turbo: false} do %>    
+                            <div class="main-featured-card">
+                                <div class="main-feature-content">
+                                    <h2><%= @main_featured.headline %></h2>
+                                    <p class="main-feature-description"><%= @main_featured.short_description %></p>
+                                    <p class="main-feature-published"><%= time_ago_in_words(@main_featured.published_on) %> ago</p>
                                 </div>
-                            <% end %>
-                        </div> 
+                                <div class="main-feature-image-box">
+                                    <%= image_tag @main_featured.avatar.url, class: "main-feature-image" %>
+                                </div>
+                            </div>
+                        <% end %> 
                     </div>
                     <div class="other-news-headlines">
                         <% @other_news.each do |other_news| %>

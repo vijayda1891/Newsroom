@@ -61,6 +61,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.main-feature-description, .news-description{
+  color: #cececf;
+}
+
 .main-feature-published, .news-published-on {
     color: #7e7e80;
     border-right: 2px groove #0c0c0c;

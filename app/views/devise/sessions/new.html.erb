@@ -5,7 +5,11 @@
       <span><%= link_to "Home", dashboard_index_path, class: "home-page-link" %></span>
     </div>
     <div class="authentication-main-title">
-      <h1> The Newsroom </h1>
+      <h1 class="letter-heading">
+          <% "NEWSROOM".each_char do |char| %>
+              <span><%= char %></span>
+          <% end %>
+      </h1>
     </div>
   </div>
 </header>

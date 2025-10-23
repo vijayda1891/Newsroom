@@ -1,13 +1,13 @@
 class DashboardController < ApplicationController
 
-  before_action :authenticate_user!, only: [:user_dashboard]
+  before_action :authenticate_user!, only: [:home]
 
-  set_tab :user_dashboard
+  set_tab :home
 
   def index
   end
 
-  def user_dashboard
+  def home
     @main_featured = News.find_by(main_featured: true)
     @left_sidebar = News.where(main_featured: false).order(created_at: :desc).limit(2)
     @right_sidebar = News.where(main_featured: false).where.not(id: @left_sidebar.pluck(:id)).order(created_at: :desc).limit(3)

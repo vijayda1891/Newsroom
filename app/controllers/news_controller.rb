@@ -70,11 +70,11 @@ class NewsController < ApplicationController
     end
 
     def edit
-        @news = News.find(params[:id])
+        @news = News.friendly.find(params[:id])
     end
 
     def show 
-        @news = News.find(params[:id])
+        @news = News.friendly.find(params[:id])
         @related = News.where(tag: @news.tag).where.not(id: @news.id).limit(6)
     end
 

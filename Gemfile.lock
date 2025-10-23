@@ -132,6 +132,8 @@ GEM
     ffi (1.17.2-arm-linux-musl)
     ffi (1.17.2-x86_64-linux-gnu)
     ffi (1.17.2-x86_64-linux-musl)
+    friendly_id (5.5.1)
+      activerecord (>= 4.0.0)
     fugit (1.11.2)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -438,6 +440,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9, >= 4.9.3)
   dotenv-rails (~> 2.1, >= 2.1.1)
+  friendly_id (~> 5.5.0)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder

@@ -15,14 +15,14 @@
         <div class="dashboard-header-content dashboard-header account-links">
             <div class="user-account">
                 <%= icon "square-user-round" %>
-                <span><%= link_to current_user.first_name, edit_user_registration_path, class: "user-account-link", data: { turbo: false} %></span>
+                <span><%= link_to current_user.first_name, edit_user_registration_path, class: "user-account-link", data: { turbo_frame: "modal" } %></span>
             </div>
             <%= link_to "Logout", destroy_user_session_path, class: "logout-link", data: { turbo_method: :delete } %>
         </div>
     </header>
     <div class="dashboard-navbar">
         <%= tabs_tag(:builder => CustomTabsBuilder) do |tab| %>
-            <%= tab.user_dashboard 'Home', dashboard_user_dashboard_path, class: "dashboard-links" %>
+            <%= tab.home 'Home', dashboard_home_path, class: "dashboard-links" %>
             <%= tab.news 'News', news_index_path, class: "dashboard-links" %>
             <%= tab.articles 'Articles', articles_path, class: "dashboard-links" %>
             <%= tab.game_reviews 'Game Reviews', game_reviews_path, class: "dashboard-links" %>

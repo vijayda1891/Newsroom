@@ -53,11 +53,11 @@ class BookReviewsController < ApplicationController
     end
 
     def edit
-        @book_review = BookReview.find(params[:id])
+        @book_review = BookReview.friendly.find(params[:id])
     end
 
     def show 
-        @book_review = BookReview.find(params[:id])
+        @book_review = BookReview.friendly.find(params[:id])
     end
 
     def create

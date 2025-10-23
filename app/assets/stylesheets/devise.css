@@ -200,3 +200,100 @@
     margin-top: -10px;
     color: red;
 }
+
+/* edit user popup content css start  */
+
+.edit-user-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px groove rgb(51 47 47);
+    margin: 20px;
+}
+
+.modal-close:hover{
+    background-color: #efd8ba;
+    padding: 1px;
+    border-radius: 2px;
+}
+
+.edit-user-heading h2{
+    color: #0a0600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-row {
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 15px; 
+    gap: 10px;
+    padding: 5px;
+}
+
+.form-field {
+  flex: 1;  
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.form-field input[type="text"],
+.form-field input[type="date"],
+.form-field input[type="email"],
+.form-field input[type="password"] {
+    width: 80%; 
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-field select {
+    width: 86%;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.user-general-details, .user-confirm-password{
+    border-bottom: 2px groove rgb(51 47 47);
+    margin: 20px;
+}
+
+.edit-user-actions{
+    text-align: center;
+}
+
+.edit-user-actions input[type="submit"] {
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #efd8ba;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.delete-account{
+    text-align: center;
+    margin-top: 5px;
+}
+
+.delete-account button[type="submit"]{
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #efd8ba;
+    padding: 6px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.unhappy-prompt{
+    color: #ff2600;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* edit user popup content css end  */

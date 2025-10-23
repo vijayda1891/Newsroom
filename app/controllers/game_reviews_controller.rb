@@ -12,11 +12,11 @@ class GameReviewsController < ApplicationController
     end
 
     def show
-        @game_review = GameReview.find(params[:id])
+        @game_review = GameReview.friendly.find(params[:id])
     end
 
     def edit
-        @game_review = GameReview.find(params[:id])
+        @game_review = GameReview.friendly.find(params[:id])
     end
 
     def create

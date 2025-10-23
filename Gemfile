@@ -70,5 +70,5 @@ gem "kaminari", "~> 1.2", ">= 1.2.2"
 gem "friendly_id", "~> 5.5.0"
 group :development, :test do
   gem "rspec-rails", "~> 8.0", ">= 8.0.1"
-  gem "dotenv-rails", "~> 2.1", ">= 2.1.1"
+  gem "dotenv-rails", "~> 3.1"
 end

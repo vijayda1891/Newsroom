@@ -4,7 +4,7 @@
             <%= Date.today.strftime("%B %e, %Y") %>
         </div>
         <div class="dashboard-header-content dashboard-header">
-            <%= link_to dashboard_index_path, class: "dashboard-header-link", data: { turbo: false} do %>
+            <%= link_to newsroom_path, class: "dashboard-header-link", data: { turbo: false} do %>
                 <h1 class="letter-heading">
                     <% "NEWSROOM".each_char do |char| %>
                         <span><%= char %></span>

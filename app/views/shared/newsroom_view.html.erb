@@ -1,0 +1,19 @@
+<div class="app-home-page">
+    <header>
+    </header>
+    <main>
+        <div class="main-content">
+            <div class="header-n-description">   
+                <h1>Newsroom</h1>
+                <p>News, Articles, Current affairs, Game reviews and more, Join today.</p>
+            </div>
+            <div class="signin-signup-links">
+                <%= button_to "Create account", new_user_registration_path, method: :get, class: "home-register-link", data: { turbo: false } %>
+                <span> Already have an account ? <%= button_to "Login", new_user_session_path, class: "home-login-link", data: { turbo: false } %></span>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p> © Copyright 2025 Newsroom - Vijay DA. All rights reserved.</p>
+    </footer>
+<div>

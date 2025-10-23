@@ -4,9 +4,6 @@ class DashboardController < ApplicationController
 
   set_tab :home
 
-  def index
-  end
-
   def home
     @main_featured = News.find_by(main_featured: true)
     @left_sidebar = News.where(main_featured: false).order(created_at: :desc).limit(2)

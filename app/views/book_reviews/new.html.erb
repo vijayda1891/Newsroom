@@ -1,11 +1,6 @@
 <body class="app-common-container">
     <%= render "partials/common_header" %>
     <main class="sub-heading-content">
-        <!-- <div class="sub-heading-header">
-            <div class="tab-header">
-                <h3> New Book Review</h3>
-            </div>
-        </div> -->
         <%= render "partials/book_review_form", url: book_reviews_path(@book_review), action: "new" %>
     </main>
 </body>

@@ -172,3 +172,7 @@
     object-fit: cover; 
     overflow: hidden;
 }
+
+.game-review-content{
+    margin-bottom: 30px;
+}

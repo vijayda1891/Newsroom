@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  get "dashboard/index"
+  get "newsroom", to: "application#newsroom"
   get "dashboard/home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root "dashboard#index"
+  root "application#newsroom"
   resources :book_reviews do 
     collection do 
       get :fiction

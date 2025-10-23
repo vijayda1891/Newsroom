@@ -1,5 +1,28 @@
 /* commond css */
 
+.dashboard-heading{
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  z-index: 1000; 
+  background-color: #242326;
+}
+
+.common-footer {
+  /* bottom: 0;
+  left: 0; */
+  text-align: center;
+  width: 100%;
+  font-family: monospace;
+  font-size: inherit;
+  border-top: 4px groove  rgb(116, 103, 103);
+}
+
+.common-footer p{
+  color: #f5e5da;
+}
+
 /* pagination related css start */
 
 .pagination{

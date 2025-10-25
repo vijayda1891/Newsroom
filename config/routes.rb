@@ -43,5 +43,9 @@ Rails.application.routes.draw do
       get :business
       get :entertainment
     end
+    member do
+      get :comments
+      post :news_comment
+    end
   end
 end

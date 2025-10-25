@@ -1,0 +1,17 @@
+<div class="news-comments-list">
+    <% @comments.each do |x| %>
+    <div class="comment-container">
+        <div class="comment-details">
+        <div class="comment-user">
+            <%= "@#{x.user.first_name} #{x.user.surname}" %>
+        </div>
+        <div class="comment-time">
+            <%= "#{time_ago_in_words(x.created_at)} ago" %>
+        </div>
+        </div>
+        <div class="comment">  
+        <%= action_text_links_new_tab(x.comment) %>
+        </div>
+    </div>
+    <% end %>
+</div>

@@ -333,3 +333,90 @@ body.modal-open {
 }
 
 /* modal popup css end  */
+
+.comment-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  z-index: 1050;
+  padding: 1rem;
+}
+
+.comment-modal-dialog {
+  position: fixed;
+  top: 0;
+  right: 0; 
+  height: 100vh; 
+  width: 25vw; 
+  background-color: white; 
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.comment-modal-close {
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.comments-popup-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 2px groove rgb(51 47 47);
+}
+
+.comments-form{
+  padding: 15px;
+  border-bottom: 2px groove rgb(51 47 47);
+}
+
+.popup-actions{
+  text-align: center;
+}
+
+.news-comments-list{
+  padding: 15px;
+}
+
+.comment-details{
+  display:flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.comment-user{
+  border-right: 2px groove rgb(51 47 47);
+  padding-right: 10px;
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.comment-time{
+  color: #3d3b3b;
+}
+
+.comment-container:nth-child(odd){
+  background-color: #ffffff;
+  padding: 4px;
+  color: rgb(51 47 47);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.comment-container:nth-child(even){
+  background-color: rgb(200 189 189);
+  padding: 4px;
+  color: #151111;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}

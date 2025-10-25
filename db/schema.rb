@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_23_131236) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_24_195033) do
   create_table "action_text_rich_texts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", size: :long
@@ -79,6 +79,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_23_131236) do
     t.index ["slug"], name: "index_book_reviews_on_slug", unique: true
   end
 
+  create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "comment"
+    t.integer "liked"
+    t.integer "disliked"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "commentable_type", null: false
+    t.bigint "commentable_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "friendly_id_slugs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -142,4 +155,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_23_131236) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "users"
 end

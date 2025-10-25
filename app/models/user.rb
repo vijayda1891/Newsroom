@@ -3,7 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  
+  has_many :comments
+  
   enum :role, { Viewer: 0, Admin: 1 }       
 
   after_create :send_welcome_email 

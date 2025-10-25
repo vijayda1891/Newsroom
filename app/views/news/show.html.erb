@@ -20,6 +20,12 @@
             <div class="news-content">
                 <%= action_text_links_new_tab(@news.content) %>
             </div>
+            <%= link_to comments_news_path(@news), class: "news-comments", data: { turbo_frame: "modal" } do %>
+                <div class="news-comments-section">
+                    <%= icon "message-circle-more" %>
+                    <h3> Comments </h3>
+                </div>
+            <% end %>
         </div>
         <% unless @related.empty? %>
             <div class= "more-news-section">

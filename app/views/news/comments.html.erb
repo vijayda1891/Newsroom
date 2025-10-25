@@ -1,0 +1,34 @@
+<turbo-frame id="modal">
+  <% form_markup = capture do %>
+    <div class="comments-popup-header">
+      <h2>Comments</h2>
+      <button type="button" class="comment-modal-close" aria-label="Close" data-action="click->modal#close">&times;</button>
+    </div>
+    <div class="comments-form">
+      <%= form_for(@comment, url: news_comment_news_path, html: { method: :post }) do |f| %>
+        <div class="field">
+          <%= f.rich_text_area :comment %>
+        </div>
+        <div class="popup-actions">
+          <button type="button" class=""> Cancel </button>   
+          <%= f.submit "Comment", class: "", id: "" %>
+        </div>
+      <% end %>
+    </div>
+    <%= render "news/all_comments"%>
+  <% end %>
+
+
+  <% if turbo_frame_request? %>
+    <div class="comment-modal-backdrop" data-action="click->modal#backgroundClick">
+      <div class="comment-modal-dialog" data-action="click->modal#stopPropagation">
+        <%= form_markup.html_safe %>
+      </div>
+    </div>
+  <% else %>
+    <div class="page-edit">
+      <%= form_markup.html_safe %>
+    </div>
+  <% end %>
+
+</turbo-frame>

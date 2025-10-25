@@ -1,7 +1,9 @@
 class NewsController < ApplicationController
-    before_action :authenticate_user!
-    set_tab :news
 
+    before_action :authenticate_user!
+    before_action :load_news, only: [ :edit, :show, :comments, :news_comment]
+
+    set_tab :news
     set_tab :world, :navigation, :only => %w(world)
     set_tab :sport, :navigation, :only => %w(sport)
     set_tab :regional, :navigation, :only => %w(regional)
@@ -70,11 +72,9 @@ class NewsController < ApplicationController
     end
 
     def edit
-        @news = News.friendly.find(params[:id])
     end
 
     def show 
-        @news = News.friendly.find(params[:id])
         @related = News.where(tag: @news.tag).where.not(id: @news.id).limit(6)
     end
 
@@ -96,9 +96,23 @@ class NewsController < ApplicationController
         end
     end
 
+    def comments
+        @comment = Comment.new
+        @comments = @news.comments
+    end
+
+    def news_comment
+        @news.comments.create(comment: params[:comment][:comment], user_id: current_user.id)
+        head :no_content
+    end
+
     private
 
     def news_params
         params.require(:news).permit!
+    end
+
+    def load_news
+        @news = News.friendly.find(params[:id])
     end
 end

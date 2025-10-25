@@ -223,7 +223,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.news-content, .news-headline, .news-details{
+.news-content, .news-headline, .news-details, .news-comments-section {
   margin-left: 25%;
   margin-right: 25%;
 }
@@ -242,4 +242,18 @@
 
 .news-content{
   color: #f8f8fa;
+}
+
+.news-comments-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #cececf;
+  margin-top: 10px;
+}
+
+.news-comments{
+  text-decoration: none;
+  color: #0c0c0c;
 }
